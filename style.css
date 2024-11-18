@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at top left, #ff7eb3, #ff65a3, #7afcff, #89b6ff);
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Light source circles for vibrant background */
+.light-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(60px);
+}
+
+.light1 {
+  width: 300px;
+  height: 300px;
+  background: #ff7eb3;
+  top: 10%;
+  left: 15%;
+}
+
+.light2 {
+  width: 400px;
+  height: 400px;
+  background: #7afcff;
+  bottom: 15%;
+  right: 20%;
+}
+
+.light3 {
+  width: 250px;
+  height: 250px;
+  background: #89b6ff;
+  top: 50%;
+  left: 70%;
+}
+
+/* Abstract Shapes */
+.shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  opacity: 0.2;
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape1 {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 30%;
+  transform: rotate(45deg);
+}
+
+.shape2 {
+  width: 120px;
+  height: 120px;
+  bottom: 10%;
+  right: 15%;
+  transform: rotate(-30deg);
+}
+
+.shape3 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  left: 80%;
+  transform: rotate(60deg);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(20deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.calculator {
+  width: 320px;
+  background: #2a2d35;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.display {
+  background: #22252d;
+  padding: 20px;
+}
+
+#display {
+  width: 100%;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-align: right;
+  outline: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Number Buttons in Lighter Color */
+.button {
+  padding: 20px;
+  font-size: 1.5rem;
+  background: #e0e0e0; /* Lighter background for number buttons */
+  border: 1px solid #d4d4d4;
+  color: #2a2d35;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.button:hover {
+  background: #cccccc;
+  transform: scale(1.05);
+}
+
+/* Operator Buttons */
+.operator {
+  background: #ff9500;
+  color: #fff;
+}
+
+.operator:hover {
+  background: #e08600;
+}
+
+/* Clear Button */
+.clear {
+  background: #ff3b30;
+  color: #fff;
+}
+
+.clear:hover {
+  background: #e03227;
+}
+
+/* Equal Button */
+.equal {
+  background: #32d74b;
+  color: #fff;
+  grid-column: span 2;
+}
+
+.equal:hover {
+  background: #29b83e;
+}
+
+/* Zero Button (spanning two columns) */
+.zero {
+  grid-column: span 2;
+  background: #e0e0e0;
+  color: #2a2d35;
+}
+
